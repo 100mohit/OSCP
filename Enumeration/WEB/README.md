@@ -148,49 +148,49 @@ Web enumeration means to look out info about services running on port, versions,
 
 # nikto -h
 
-				# nikto -H
+		# nikto -H
 				
-				# nikto -Help
+		# nikto -Help
 
-				# nikto -Version
+		# nikto -Version
 
-				# nikto -update
+		# nikto -update
 
-				# nikto -list-plugins
+		# nikto -list-plugins
 
-				# nikto -h http://192.168.0.106/
+		# nikto -h http://192.168.0.106/
 
-				# nikto -h 192.168.0.106
+		# nikto -h 192.168.0.106
 
-				# nikto -C all -h 192.168.0.106 -port 80
+		# nikto -C all -h 192.168.0.106 -port 80
 
-				# nikto -Cgidirs all -h 192.168.0.106 -port 80
+		# nikto -Cgidirs all -h 192.168.0.106 -port 80
 
-				# vim target_IP.txt 
+		# vim target_IP.txt 
 
 						
-				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-				192.168.0.1
-				192.168.0.105
-				192.168.0.100
-				192.168.0.106
-				192.168.0.102
-				192.168.0.6
-				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		192.168.0.1
+		192.168.0.105
+		192.168.0.100
+		192.168.0.106
+		192.168.0.102
+		192.168.0.6
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-				# nikto -h target_IP.txt 
+		# nikto -h target_IP.txt 
 
-				# nikto -Cgidirs all -h 192.168.0.106 -port 80 -Display v
+		# nikto -Cgidirs all -h 192.168.0.106 -port 80 -Display v
 
-				# nikto -Cgidirs all -h 192.168.0.106 -port 80
+		# nikto -Cgidirs all -h 192.168.0.106 -port 80
 
-				# nikto -Cgidirs all -h 192.168.0.106:80
+		# nikto -Cgidirs all -h 192.168.0.106:80
 
-				# nikto -Cgidirs all -h 192.168.0.106 -port 80 -nolookup -nossl
+		# nikto -Cgidirs all -h 192.168.0.106 -port 80 -nolookup -nossl
 
-				# nikto -h http://192.168.0.106/cgi-bin
+		# nikto -h http://192.168.0.106/cgi-bin
 
-				# nikto -Plugins shellshock -h http://192.168.0.106/
+		# nikto -Plugins shellshock -h http://192.168.0.106/
 
-				# nikto -Tuning 1 -h 192.168.0.106:80
+		# nikto -Tuning 1 -h 192.168.0.106:80
