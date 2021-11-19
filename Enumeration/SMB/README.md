@@ -13,5 +13,20 @@ SMB has been used primarily to connect Windows computers, although most other sy
 ```
 #### SMB CLIENT
 `
-DJDKJFJDF
+# smbclient -L //192.168.1.41
+
+# smbclient -L //192.168.1.41 -U ""
+
+# smbclient -L //192.168.1.41/data -U ""
+
+# smbclient -L //192.168.1.41/pass -U ""
+
+# smbclient -L //192.168.1.41/C$ -U ""
+
+# smbclient -L //192.168.1.41/ADMIN$ -U ""
+
+# smbclient -L //192.168.1.41/ADMIN$ -U "administrator"
+
+# smbclient -L //192.168.1.41/E$ -U "administrator"
+
 `
