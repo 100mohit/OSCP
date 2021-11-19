@@ -244,3 +244,17 @@ Web enumeration means to look out info about services running on port, versions,
 		# nikto -Plugins shellshock -h http://192.168.0.106/
 
 		# nikto -Tuning 1 -h 192.168.0.106:80
+## cadaver
+	        # apt install cadaver
+
+		# yum install cadaver
+
+		# cadaver http://192.168.0.106/webdav/
+
+		dav:/webdav/> ?
+
+		dav:/webdav/> Is
+
+		dav:/webdav/> put network.png
+
+		dav:/webdav/> mkdir new-dir
