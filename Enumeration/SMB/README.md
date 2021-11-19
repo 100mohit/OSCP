@@ -11,7 +11,7 @@ SMB has been used primarily to connect Windows computers, although most other sy
     SMB 3.02 / SMB3: This version used in Windows 8.1 and Windows Server 2012 R2.
     SMB 3.1: This version used in Windows Server 2016 and Windows 10.
 ```
-# Step to follow in this attack
+#### Step to follow in this attack
 
 ```
 1.Find the null session
@@ -44,7 +44,7 @@ smbclient -L //192.168.1.41/ADMIN$ -U "administrator"
 smbclient -L //192.168.1.41/E$ -U "administrator"
 
 ```
-# SMBMAP
+#### SMBMAP
 
 ```
 smbmap -H 192.168.41
