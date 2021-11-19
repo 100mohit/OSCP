@@ -64,7 +64,7 @@ Web enumeration means to look out info about services running on port, versions,
 	# nmap -sT -sV -v -p 80,443 --script=http-enum.nse $IP
 	# nmap -sT -sV -v -p 80,443 --script=http-php-version.nse $IP
 	# nmap -sT -sV -v -p 80,443 --script=http-put.nse $IP
-	# nmap -v -Pn -sT -sV -p 80 --script=http-put.nse --script-args="http-put.url='/test/shell.php',http-put.file='/tmp/shell.php'" $IP
+	# nmap -v  -Pn -sT -sV -p 80 --script=http-put.nse --script-args="http-put.url='/test/shell.php',http-put.file='/tmp/shell.php'" $IP
 	# nmap -sT -sV -v -p 80,443 --script=http-shellshock.nse $IP
 	# nmap -sT -sV -v -p 80,443 --script=http-slowloris.nse $IP
 	# nmap -sT -sV -v -p 80,443 --script=http-vhosts.nse $IP
