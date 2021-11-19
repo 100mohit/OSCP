@@ -27,9 +27,9 @@ SMB has been used primarily to connect Windows computers, although most other sy
 
 #### SMB CLIENT
 ```
-smbclient -L //192.168.1.41
+smbclient -L //192.168.1.41		- Null session
 
-smbclient -L //192.168.1.41 -U ""
+smbclient -L //192.168.1.41 -U ""	- Session with user name
 
 smbclient -L //192.168.1.41/data -U ""
 
