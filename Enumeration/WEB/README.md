@@ -58,3 +58,33 @@ Web enumeration means to look out info about services running on port, versions,
 	# nmap -sT -sV -sC -A -O -v -p 80,443 $IP
 	# nmap -Pn -sT -sV -sC -A -O -v -p 80,443 $IP
 
+
+## Obtaining Information using nmap Scripts
+	# ls /usr/share/nmap/scripts/ | grep http
+	# nmap -sT -sV -v -p 80,443 --script=http-enum.nse $IP
+	# nmap -sT -sV -v -p 80,443 --script=http-php-version.nse $IP
+	# nmap -sT -sV -v -p 80,443 --script=http-put.nse $IP
+	# nmap -sT -sV -v -p 80,443 --script=http-shellshock.nse $IP
+	# nmap -sT -sV -v -p 80,443 --script=http-slowloris.nse $IP
+	# nmap -sT -sV -v -p 80,443 --script=http-vhosts.nse $IP
+## HTTP Method
+| Method | Syntax | Description |
+|--------|--------|-------------|
+| GET | GET /index.html |GET method requests a representation of the specified resource. Requests using GET should only retrieve data. |
+| HEAD | HEAD /index.html |HEAD method requests the headers that would be returned if the HEAD request's URL was instead requested with the HTTP GET method.  |
+| POST | POST /test |POST method is used to submit an entity to the specified resource, often causing a change in state or side effects on the server. |
+| PUT | PUT /new.html HTTP/1.1 | The PUT method replaces all current representations of the target resource with the request payload. |
+| DELETE | DELETE /file.html HTTP/1.1 |DELETE request method deletes the specified resource. |
+| CONNECT | CONNECT www.example.com:443 HTTP/1.1 |CONNECT method starts two-way communications with the requested resource. It can be used to open a tunnel. |
+| OPTIONS | OPTIONS /index.html HTTP/1.1 |OPTIONS method requests permitted communication options for a given URL or server. A client can specify a URL with this method, or an asterisk (*) to refer to the entire server. |
+| TRACE | TRACE /index.html |TRACE method performs a message loop-back test along the path to the target resource, providing a useful debugging mechanism. |
+| PATCH | PATCH /file.txt HTTP/1.1 |PATCH request method applies partial modifications to a resource. |
+## Detecting Available Methods 
+	# nmap -sT -sV -v -p 80,443 --script=http-methods.nse $IP
+	# nmap -sT -sV -v -p 80,443 --script=http-method-tamper.nse $IP
+## Upload File
+	# nmap -p 80 --script http-methods --script-args http-methods.url-path='/index.php' $IP
+	# nmap -p 80 --script http-methods --script-args http-method.test-all ='/192.168.1.100' 192.168.1.100
+	
+	# nmap -p 80 192.168.1.100 --script http-put --script-args http-put.url='/dav/test.php',http-put.file='/dev/shm/test.php'
+## Tools
