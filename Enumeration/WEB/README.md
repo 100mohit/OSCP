@@ -15,7 +15,7 @@ Web enumeration means to look out info about services running on port, versions,
     - [nikto](#nikto)
     - [davtest](#davtest)
     - [cadaver](#cadaver)
-    - [shellshock](#Shellshock vulnerabilities)
+    - [shellshock](#Shellshock)
     - [whatweb](#whatweb)
 - [HTTP Basic Authentication](#http-basic-authentication)
   - [Tools](#tools)
@@ -293,7 +293,9 @@ Web enumeration means to look out info about services running on port, versions,
 	# hydra -L tomcat -P apache_tomcat_passwords.txt -s 8080 192.168.0.203 http-head "/manager/html"
 		
 	# hydra -L /usr/share/wordlists/rockyou.txt -P /usr/share/wordlists/rockyou.txt 10.10.11.106 http-head
-## Shellshock (cgi-bin) vulnerabilities 
+## Shellshock 
+	# shellshock (cgi-bin) vulnerabilities 
+	
 	https://www.vulnhub.com/entry/sumo-1,480/
 
 	# nmap -vv -sT -sV -A -O -p 22,80 192.168.0.106
