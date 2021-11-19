@@ -56,3 +56,53 @@ smbmap --help
 smbmap -u ""  -H 192.168.41
 
 ```
+### Enumeration Tools:
+SMB enumeration provide important information about our target.
+#### Nmap
+```
+# ls /usr/share/nmap/scripts/ | grep smb
+		smb2-capabilities.nse
+		smb2-security-mode.nse
+		smb2-time.nse
+		smb2-vuln-uptime.nse
+		smb-brute.nse
+		smb-double-pulsar-backdoor.nse
+		smb-enum-domains.nse
+		smb-enum-groups.nse
+		smb-enum-processes.nse
+		smb-enum-services.nse
+		smb-enum-sessions.nse
+		smb-enum-shares.nse
+		smb-enum-users.nse
+		smb-flood.nse
+		smb-ls.nse
+		smb-mbenum.nse
+		smb-os-discovery.nse
+		smb-print-text.nse
+		smb-protocols.nse
+		smb-psexec.nse
+		smb-security-mode.nse
+		smb-server-stats.nse
+		smb-system-info.nse
+		smb-vuln-conficker.nse
+		smb-vuln-cve2009-3103.nse
+		smb-vuln-cve-2017-7494.nse
+		smb-vuln-ms06-025.nse
+		smb-vuln-ms07-029.nse
+		smb-vuln-ms08-067.nse
+		smb-vuln-ms10-054.nse
+		smb-vuln-ms10-061.nse
+		smb-vuln-ms17-010.nse
+		smb-vuln-regsvc-dos.nse
+```
+#### Command to find open SMB shares through nmap
+```
+ nmap -v --script smb-enum-shares --script-args smbuser=admin,smbpass=admin -p445 192.168.1.0/24
+```
+### Hostname
+ Tools to enumerate hostname
+ 
+```
+   # nmblookup -A ip
+   # nbtstat -A ip
+   # nbtscan ip
