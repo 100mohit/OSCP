@@ -1,0 +1,108 @@
+Application/Web Servers
+
+Name																								Port No.
+http																									80,8080,8081,8000	TCP
+https																									443,8443,4443			TCP
+Tomcat Startup																					8080							TCP
+Tomcat Startup (SSL)																			8443							TCP
+Tomcat Shutdown																				8005 						TCP
+Tomcat AJP Connector																		8009							TCP
+GlassFish HTTP																					8080							TCP
+GlassFish HTTPS																				    8181							TCP
+GlassFish Admin Server																		4848							TCP
+Jetty																									8080							TCP
+Jonas Admin Console																			9000							TCP
+IHS Administration																				8008							TCP
+JBoss Admin Console																			8080							TCP
+WildFly Admin Console																		9990							TCP
+WebLogic Admin Console																	7001							TCP
+WAS Admin Console (SSL)																	9043							TCP
+WAS Admin Console																			9060							TCP
+WAS JVM HTTP																					9080							TCP
+WAS JVM HTTPS																					9443							TCP
+Alfresco Explorer/Share																		8080							TCP
+Apache Derby Network Server															1527							TCP
+OHS																									7777							TCP
+OHS (SSL)																							4443							TCP
+Jenkins																								8080							TCP
+
+cPanel
+cPanel																								2082							TCP
+cPanel - SSL																						2083							TCP
+WHM																									2086							TCP
+WHM - SSL																						    2087							TCP
+Webmail																							2095							TCP
+Webmail - SSL																					2096							TCP
+Plesk Control Panel																			   8880							TCP
+Plesk Panel - SSL																				8443							TCP
+Plesk Linux Webmail																			N/A* 							TCP
+Plesk Windows Webmail (SmarterMail)												9998**						TCP
+Virtuozzo																							4643							TCP
+DotNet Panel																						9001							TCP
+DotNet Panel Login																			80 							TCP
+RDP (Remote Desktop Protocol)															4489 						TCP
+SFTP Shared/Reseller Servers																2222							TCP
+Webdisk																							2077							TCP
+Webdisk - SSL																					2078							TCP
+Plesk Control Panel																			   8880							TCP
+Plesk Control Panel - SSL																	8443							TCP
+Plesk Linux Webmail																			N/A* 							TCP
+Plesk Windows Webmail (SmarterMail)												9998**						TCP
+Virtuozzo																							4643							TCP
+DotNet Panel																						9001							TCP
+DotNet Panel Login																			80								TCP
+RDP (Remote Desktop Protocol)															4489 						TCP
+
+File Transfer Protocols
+ftp																									21,20,2121				TCP
+ftps																									21,20,2121,990,989	TCP
+rscp																									514							TCP
+oftp																									6619							TCP/UDP
+cifs / smb / samba																				139,445						TCP/UDP
+ssh																									22,2222						TCP
+nfs																									111,2049,4045,1110	TCP
+tftp																									69								UDP
+http																									80,8080,8081,8000	TCP
+https																									443,8443,4443			TCP
+telnet																								23								TCP
+git																										9418							TCP
+Apple Filing Protocol (afp)																	548							TCP
+moosefs																							9419,9420,9421,9422,9425	TCP
+
+Remote Connection Protocols
+ssh																									22,2222						TCP
+telnet																								23								TCP
+rdp																									3389							TCP
+vnc																									5900,5902,59036002,6003		TCP/UDP
+
+Directory Access Protocol
+LDAP																									389							TCP
+LDAP (SSL)																						636 							TCP
+
+Database / Datastore Port Protocol
+DB2																									50000						TCP
+Redis Servers																					    6379							TCP
+Oracle Listener																					1521							TCP
+mongoDB27017																					27017						TCP
+MySQL																								3306							TCP
+MS SQL																								1433							TCP
+Memcached																						11211						TCP
+MariaDB																							3306							TCP
+Postgresql																							5432							TCP
+
+Messaging/Transfer
+MQ Listener																						1414							TCP/UDP
+IBM Connect:Direct																			1364							TCP/UDP
+RabbitMQ Web UI																				15672						TCP/UDP
+Tibco RV Daemon																				7474 						TCP/UDP
+GoToMyPC																							8200  						TCP/UDP
+
+Mail Transfer Protocol
+POP3																									110							TCP/UDP
+POP3 - SSL																						    995							TCP/UDP
+IMAP																									143							TCP/UDP
+IMAP - SSL																							993							TCP/UDP
+SMTP																								    25								TCP/UDP
+SMTP Alternate																					26								TCP/UDP
+SMTP Alternate																					587							TCP/UDP
+SMTP - SSL																						465							TCP/UDP
