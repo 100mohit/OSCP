@@ -11,6 +11,20 @@ SMB has been used primarily to connect Windows computers, although most other sy
     SMB 3.02 / SMB3: This version used in Windows 8.1 and Windows Server 2012 R2.
     SMB 3.1: This version used in Windows Server 2016 and Windows 10.
 ```
+# Step to follow in this attack
+
+```
+1.Find the null session
+
+2.if null session is not there than find the user
+
+3.User id password 
+
+4.Always focous on the extenction on the file
+
+5.Try the wordpress user_name password for FTP SMB   
+```
+
 #### SMB CLIENT
 ```
 smbclient -L //192.168.1.41
