@@ -144,3 +144,53 @@ Web enumeration means to look out info about services running on port, versions,
 					 
 		<!doctypehtml><html><head><title>Form - Fileupload</title></head><body><form action="fileupload.php"enctype="multipart/form-data"method="post">Select File to Upload:<br><input name="filetoupload"type="file"><br><input name="submit"type="submit"value="Upload"><br></form><?php if(isset($_POST['submit'])){$file_name=$_FILES["filetoupload"]["name"];$file_type=$_FILES["filetoupload"]["type"];$file_tmp_name=$_FILES["filetoupload"]["tmp_name"];$file_error=$_FILES["filetoupload"]["error"];$file_size=$_FILES["filetoupload"]["size"];echo"File Name = {$file_name} <br />";echo"File Type = {$file_type} <br />";echo"File Tmp Name = {$file_tmp_name}<br />";echo"File Error = {$file_error} <br />";echo"File Size = {$file_size} <br />";if(move_uploaded_file($file_tmp_name,$file_name)){echo "File Uploaded Successfully";}else{echo "Could not Upload file";}}else{echo "Form was not submitted <br />";} ?></body></html>
 		
+#### NIKTO
+
+# nikto -h
+
+				# nikto -H
+				
+				# nikto -Help
+
+				# nikto -Version
+
+				# nikto -update
+
+				# nikto -list-plugins
+
+				# nikto -h http://192.168.0.106/
+
+				# nikto -h 192.168.0.106
+
+				# nikto -C all -h 192.168.0.106 -port 80
+
+				# nikto -Cgidirs all -h 192.168.0.106 -port 80
+
+				# vim target_IP.txt 
+
+						
+				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+				192.168.0.1
+				192.168.0.105
+				192.168.0.100
+				192.168.0.106
+				192.168.0.102
+				192.168.0.6
+				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+				# nikto -h target_IP.txt 
+
+				# nikto -Cgidirs all -h 192.168.0.106 -port 80 -Display v
+
+				# nikto -Cgidirs all -h 192.168.0.106 -port 80
+
+				# nikto -Cgidirs all -h 192.168.0.106:80
+
+				# nikto -Cgidirs all -h 192.168.0.106 -port 80 -nolookup -nossl
+
+				# nikto -h http://192.168.0.106/cgi-bin
+
+				# nikto -Plugins shellshock -h http://192.168.0.106/
+
+				# nikto -Tuning 1 -h 192.168.0.106:80
