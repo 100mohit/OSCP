@@ -88,7 +88,57 @@ Web enumeration means to look out info about services running on port, versions,
 	# nmap -p 80 --script http-methods --script-args http-method.test-all ='/192.168.1.100' 192.168.1.100
 	
 	# nmap -p 80 192.168.1.100 --script http-put --script-args http-put.url='/dav/test.php',http-put.file='/dev/shm/test.php'
-## Tools
+	
+## webdev
+	# curl -v -X OPTIONS http://192.168.0.106/webdav/
+
+	# curl -i -k -X OPTIONS http://192.168.0.106/webdav/
+
+	# nmap -v -sT -sV -A -O -p 80 --script-http-methods.nse --script-args http-methods.url-path='/webdav/ 192.168.0.106
+
+	# curl -X PUT -d "hi" http://192.168.0.106/webdav/1.txt
+
+	# curl -v -u dev:123 -X OPTIONS  http://192.168.0.106/test/
+
+	# curl -u dev:123 -X PUT -d "hi"  http://192.168.0.106/test/1.txt
+	
+## Configuration on Apache Webdev
+		
+	# vim /etc/httpd/conf/httpd.conf
+
+
+			
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	<VirtualHost *:80>
+		DocumentRoot /var/www/html/webdav/
+		   Alias /webdav /var/www/html/webdav
+		<Directory /var/www/html/webdav>
+		    DAV On
+		</Directory>
+	</VirtualHost>
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+	Basic Authentiction
+			# httpasswd /etc/httpd/.httpasswd admin
+
+
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	<VirtualHost *:80>
+
+		DocumentRoot /var/www/html/webdav/
+		<Directory /var/www/html/webdav>
+		    DAV On
+		    AuthType Basic
+		    AuthName "webdav"
+		    AuthUserFile /etc/httpd/.htpasswd
+		    Require valid-user
+		</Directory>
+	</VirtualHost>
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+## Tools:
+
 ## curl
 	# curl -X GET 192.168.1.100
 	# curl -X OPTIONS 192.168.1.100
