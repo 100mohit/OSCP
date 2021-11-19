@@ -144,9 +144,9 @@ Web enumeration means to look out info about services running on port, versions,
 					 
 		<!doctypehtml><html><head><title>Form - Fileupload</title></head><body><form action="fileupload.php"enctype="multipart/form-data"method="post">Select File to Upload:<br><input name="filetoupload"type="file"><br><input name="submit"type="submit"value="Upload"><br></form><?php if(isset($_POST['submit'])){$file_name=$_FILES["filetoupload"]["name"];$file_type=$_FILES["filetoupload"]["type"];$file_tmp_name=$_FILES["filetoupload"]["tmp_name"];$file_error=$_FILES["filetoupload"]["error"];$file_size=$_FILES["filetoupload"]["size"];echo"File Name = {$file_name} <br />";echo"File Type = {$file_type} <br />";echo"File Tmp Name = {$file_tmp_name}<br />";echo"File Error = {$file_error} <br />";echo"File Size = {$file_size} <br />";if(move_uploaded_file($file_tmp_name,$file_name)){echo "File Uploaded Successfully";}else{echo "Could not Upload file";}}else{echo "Form was not submitted <br />";} ?></body></html>
 		
-#### NIKTO
+## nikto
 
-# nikto -h
+		# nikto -h
 
 		# nikto -H
 				
