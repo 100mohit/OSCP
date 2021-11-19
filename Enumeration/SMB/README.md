@@ -12,7 +12,7 @@ SMB has been used primarily to connect Windows computers, although most other sy
     SMB 3.1: This version used in Windows Server 2016 and Windows 10.
 ```
 #### SMB CLIENT
-`
+```
 smbclient -L //192.168.1.41
 
 smbclient -L //192.168.1.41 -U ""
@@ -29,4 +29,4 @@ smbclient -L //192.168.1.41/ADMIN$ -U "administrator"
 
 smbclient -L //192.168.1.41/E$ -U "administrator"
 
-`
+```
