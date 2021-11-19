@@ -30,3 +30,15 @@ smbclient -L //192.168.1.41/ADMIN$ -U "administrator"
 smbclient -L //192.168.1.41/E$ -U "administrator"
 
 ```
+# SMBMAP
+
+```
+smbmap -H 192.168.41
+
+smbmap -u "" -H 192.168.41
+
+smbmap --help
+
+smbmap -u ""  -H 192.168.41
+
+```
