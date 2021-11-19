@@ -15,6 +15,7 @@ Web enumeration means to look out info about services running on port, versions,
     - [nikto](#nikto)
     - [davtest](#davtest)
     - [cadaver](#cadaver)
+    - [shellshock](#whatweb)
 - [HTTP Basic Authentication](#http-basic-authentication)
   - [Tools](#tools)
     - [hydra](#hydra)
