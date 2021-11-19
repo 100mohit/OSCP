@@ -55,3 +55,8 @@ Web enumeration means to look out info about services running on port, versions,
 	# nmap -sT -v -p- -oA allports $IP 			##Save Output in File
 
 	# nmap -Pn -sT -v -p- $IP
+	
+	## Check Running Service Version
+	# nmap -sT -sV -sC -A -O -v -p 80,443 $IP
+	# nmap -Pn -sT -sV -sC -A -O -v -p 80,443 $IP
+
