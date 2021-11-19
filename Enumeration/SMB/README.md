@@ -11,3 +11,7 @@ SMB has been used primarily to connect Windows computers, although most other sy
     SMB 3.02 / SMB3: This version used in Windows 8.1 and Windows Server 2012 R2.
     SMB 3.1: This version used in Windows Server 2016 and Windows 10.
 ```
+#### SMB CLIENT
+`
+DJDKJFJDF
+`
