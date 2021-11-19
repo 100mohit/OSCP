@@ -88,3 +88,12 @@ Web enumeration means to look out info about services running on port, versions,
 	
 	# nmap -p 80 192.168.1.100 --script http-put --script-args http-put.url='/dav/test.php',http-put.file='/dev/shm/test.php'
 ## Tools
+## curl
+	# curl -X GET 192.168.1.100
+	# curl -X OPTIONS 192.168.1.100
+	# curl -X OPTIONS 192.168.1.100/webdev -v
+	# curl -X POST 192.168.1.100
+	# curl -X PUT 192.168.1.100/uploads
+	# curl -X DELETE 192.168.1.100
+	# curl 192.168.1.100/uploads --upload-file demo.txt
+	# curl -I 192.168.1.100
