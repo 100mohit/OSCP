@@ -94,6 +94,39 @@ SMB has been used primarily to connect Windows computers, although most other sy
 
 # smbmap -H 192.168.1.140 -u administrator -p 'aad3b435b51404eeaad3b435b51404ee:8846F7EAEE8FB117AD06BDD830B7586C'
 ```
+#### impacket-smbclient
+```
+# impacket-smbclient --help
+
+# impacket-smbclient domain_name/user_name:password@IP$
+
+# impacket-smbclient google.com/administrator:123@192.168.1.140
+
+ 	> ?
+
+ 	> share
+
+ 	> use data(share_folder_name)
+```
+#### smb mount
+
+```
+# smbmount:
+
+# cd /mnt/						- Check mount folder
+
+# mount -t cifs //IP$/folder_name /mnt/mount_location
+
+# mount -t cifs //192.168.1.140 /mnt/d1
+
+# mount -t cifs //192.168.1.140/data -o user=administrator,password=123 /mnt/d1
+
+# cd /mnt/d1
+
+# mount -t cifs //192.168.1.140/data /mnt/d1 -nolock				- When version Problem
+
+# mount -t cifs //192.168.1.140/data /mnt/d1 -nolock --rw			- Mount with read and write permission
+```
 ### Enumeration Tools:
 SMB enumeration provide important information about our target.
 #### Nmap
