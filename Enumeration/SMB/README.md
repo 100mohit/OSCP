@@ -108,25 +108,7 @@ SMB has been used primarily to connect Windows computers, although most other sy
 
  	> use data(share_folder_name)
 ```
-#### smb mount
 
-```
-# smbmount:
-
-# cd /mnt/						- Check mount folder
-
-# mount -t cifs //IP$/folder_name /mnt/mount_location
-
-# mount -t cifs //192.168.1.140 /mnt/d1
-
-# mount -t cifs //192.168.1.140/data -o user=administrator,password=123 /mnt/d1
-
-# cd /mnt/d1
-
-# mount -t cifs //192.168.1.140/data /mnt/d1 -nolock				- When version Problem
-
-# mount -t cifs //192.168.1.140/data /mnt/d1 -nolock --rw			- Mount with read and write permission
-```
 #### SMBTAR
 ```
 # smbtar --help
@@ -147,6 +129,25 @@ SMB has been used primarily to connect Windows computers, although most other sy
 # smbget -U administrator smb://192.168.129.327/data/php-my-admin.zip
 
 # smbget -U administrator smb://192.168.129.327/data/php-my-admin.zip -o /tmp/php-my-admin.zip
+```
+#### smb mount
+
+```
+# smbmount:
+
+# cd /mnt/						- Check mount folder
+
+# mount -t cifs //IP$/folder_name /mnt/mount_location
+
+# mount -t cifs //192.168.1.140 /mnt/d1
+
+# mount -t cifs //192.168.1.140/data -o user=administrator,password=123 /mnt/d1
+
+# cd /mnt/d1
+
+# mount -t cifs //192.168.1.140/data /mnt/d1 -nolock				- When version Problem
+
+# mount -t cifs //192.168.1.140/data /mnt/d1 -nolock --rw			- Mount with read and write permission
 ```
 
 ### Enumeration Tools:
