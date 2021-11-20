@@ -25,7 +25,9 @@ SMB has been used primarily to connect Windows computers, although most other sy
 5.Try the wordpress user_name password for FTP SMB   
 ```
 
-#### SMB CLIENT
+## SMB CLIENT TOOLS:
+
+#### smbclient
 ```
 smbclient -L //192.168.1.41		- Null session
 
@@ -42,6 +44,14 @@ smbclient -L //192.168.1.41/ADMIN$ -U ""
 smbclient -L //192.168.1.41/ADMIN$ -U "administrator"
 
 smbclient -L //192.168.1.41/E$ -U "administrator"
+
+smbclient -U 'administrator%password' \\\\192.168.1.41\\C$ 
+
+smbclient -U 'administrator%password' //192.168.1.41/C$
+
+smbclient //192.168.1.41/C$ -U administrator --pw-nt-hash 8846F7EAEE8FB117AD06BDD830B7586C    	    - pass the hash
+
+smbclient -U 'administrator%password' //192.168.1.41/C$ --option='client min protocol=NT1'	   - Use when we get protocol error
 
 ```
 #### SMBMAP
