@@ -94,7 +94,8 @@ SMB enumeration provide important information about our target.
 		smb-vuln-ms10-061.nse
 		smb-vuln-ms17-010.nse
 		smb-vuln-regsvc-dos.nse
-		nmap -v -sV -sT --script=smb-os-discovery.nse -p 445,139 192.168.129.237
+		
+nmap -v -sV -sT --script=smb-os-discovery.nse -p 445,139 192.168.129.237
 
 nmap -v -sV -sT --script=smb-system-info.nse -p 445,139 192.168.129.237
 
