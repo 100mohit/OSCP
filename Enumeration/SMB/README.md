@@ -26,7 +26,30 @@ SMB has been used primarily to connect Windows computers, although most other sy
 
 6. Use hash password to login with smb
 ```
+#### SMB VERSION DETECTION
+```
+# nc -v 192.168.1.140 139
 
+# nc -vvv 192.168.1.140 445
+
+# telnet 192.168.1.140 445
+
+# nmap -v -sV -sC -sT -A -p 445,139 192.168.1.140
+
+# tcpdump -s0 -n | eth0 src 192.168.1.140 and port 445 -A -c 10 2>/dev/null | grep -i “smba\|s.a.m”
+
+# smbclient -L //192.168.1.41
+
+# impacket-samrdump
+
+samrdump.py
+	
+	https://github.com/SecureAuthCorp/impacket/blob/master/examples/samrdump.py
+	
+smbwer.sh
+	
+	https://github.com/rewardone/OSCPRepo/blob/master/scripts/recon_enum/smbver.sh
+```
 ## SMB CLIENT TOOLS:
 
 #### SMBCLIETN
