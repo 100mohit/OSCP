@@ -27,7 +27,7 @@ SMB has been used primarily to connect Windows computers, although most other sy
 
 ## SMB CLIENT TOOLS:
 
-#### smbclient
+#### SMBCLIETN
 ```
 smbclient -L //192.168.1.41		- Null session
 
