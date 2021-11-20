@@ -94,6 +94,26 @@ SMB enumeration provide important information about our target.
 		smb-vuln-ms10-061.nse
 		smb-vuln-ms17-010.nse
 		smb-vuln-regsvc-dos.nse
+		nmap -v -sV -sT --script=smb-os-discovery.nse -p 445,139 192.168.129.237
+
+nmap -v -sV -sT --script=smb-system-info.nse -p 445,139 192.168.129.237
+
+nmap -v -sV -sT --script=smb-enum-shares.nse -p 445,139 192.168.129.237
+
+nmap -v -sV -sT --script=smb-enum-users.nse -p 445,139 192.168.129.237
+
+nmap -v -sV -sT --script=smb-enum-domains.nse -p 445,139 192.168.129.237
+
+nmap -v -sV -sT --script=smb-enum-groups.nse  -p 445,139 192.168.129.237
+
+nmap -v -sV -sT --script=smb-enum-processes.nse  -p 445,139 192.168.129.237
+
+nmap -v -sV -sT --script=smb-enum-services.nse  -p 445,139 192.168.129.237
+
+nmap -v -sV -sT --script=smb-brute.nse  -p 445,139 192.168.129.237
+
+nmap -v -sV -sT --script=smb-ls --script-args 'share=c$,path=\data' -p 445,139 192.168.129.237
+
 ```
 #### Command to find open SMB shares through nmap
 ```
