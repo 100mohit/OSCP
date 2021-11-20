@@ -127,6 +127,28 @@ SMB has been used primarily to connect Windows computers, although most other sy
 
 # mount -t cifs //192.168.1.140/data /mnt/d1 -nolock --rw			- Mount with read and write permission
 ```
+#### SMBTAR
+```
+# smbtar --help
+
+# smbtar -s IP$ -x folder_name -t tar_file -u user_name -p password -v 
+
+# smbtar -s 192.168.1.140 -x data -t data.tar -u administrator -p 123 -v
+```
+
+#### SMBGET
+```
+# smbget smb://IP$/folder_name/file_name
+
+# smbget smb://192.168.129.237/data/php-my-admin.zip
+
+# smbget --help
+
+# smbget -U administrator smb://192.168.129.327/data/php-my-admin.zip
+
+# smbget -U administrator smb://192.168.129.327/data/php-my-admin.zip -o /tmp/php-my-admin.zip
+```
+
 ### Enumeration Tools:
 SMB enumeration provide important information about our target.
 #### Nmap
