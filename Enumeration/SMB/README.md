@@ -23,6 +23,8 @@ SMB has been used primarily to connect Windows computers, although most other sy
 4.Always focous on the extenction on the file
 
 5.Try the wordpress user_name password for FTP SMB   
+
+6. Use hash password to login with smb
 ```
 
 ## SMB CLIENT TOOLS:
