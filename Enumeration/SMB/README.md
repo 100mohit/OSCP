@@ -74,19 +74,19 @@ SMB has been used primarily to connect Windows computers, although most other sy
 
 # smbmap -H 192.168.1.140 -u administrator -p 123
 
-# smbmap -H 192.168.1.140 -u DoesNotExist							- User is not exist
+# smbmap -H 192.168.1.140 -u DoesNotExist						- User is not exist
 
 # smbmap -H 192.168.1.140 -u administrator -p 123 -R					- Recurssive directory search
 
 # smbmap --help
 
-# smbmap -H 192.168.1.140 -u administrator -p 123 -R data					- Recurssive directory search
+# smbmap -H 192.168.1.140 -u administrator -p 123 -R data				- Recurssive directory search
 
 # smbmap -H 192.168.1.140 -L
 
-# smbmap -H 192.168.1.140 -u administrator -p 123 -s data					- share 
+# smbmap -H 192.168.1.140 -u administrator -p 123 -s data				- share 
 
-# smbmap -H 192.168.1.140 -u administrator -p 123 -P 445					- Define Port
+# smbmap -H 192.168.1.140 -u administrator -p 123 -P 445				- Define Port
 
 # smbmap -H 192.168.1.140 -u administrator -p 'LM_hash:NTLM_hash'
 
