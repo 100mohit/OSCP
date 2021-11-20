@@ -33,9 +33,7 @@ SMB has been used primarily to connect Windows computers, although most other sy
 ```
 # smbclient -L //192.168.1.41		- Null session
 
-# smbclient -L //192.168.1.41 -U ""	- Session with user name
-
-# smbclient -L //192.168.1.41/data -U ""
+# smbclient -L //192.168.1.41/data -U
 
 	smb:\>?
 
@@ -72,14 +70,29 @@ SMB has been used primarily to connect Windows computers, although most other sy
 #### SMBMAP
 
 ```
-smbmap -H 192.168.41
+# smbmap -H 192.168.1.140
 
-smbmap -u "" -H 192.168.41
+# smbmap -H 192.168.1.140 -u administrator -p 123
 
-smbmap --help
+# smbmap -H 192.168.1.140 -u DoesNotExist							- User is not exist
 
-smbmap -u ""  -H 192.168.41
+# smbmap -H 192.168.1.140 -u administrator -p 123 -R					- Recurssive directory search
 
+# smbmap --help
+
+# smbmap -H 192.168.1.140 -u administrator -p 123 -R data					- Recurssive directory search
+
+# smbmap -H 192.168.1.140 -L
+
+# smbmap -H 192.168.1.140 -u administrator -p 123 -s data					- share 
+
+# smbmap -H 192.168.1.140 -u administrator -p 123 -P 445					- Define Port
+
+# smbmap -H 192.168.1.140 -u administrator -p 'LM_hash:NTLM_hash'
+
+> LM_hash	- aad3b435b51404eeaad3b435b51404ee (Empty value)
+
+# smbmap -H 192.168.1.140 -u administrator -p 'aad3b435b51404eeaad3b435b51404ee:8846F7EAEE8FB117AD06BDD830B7586C'
 ```
 ### Enumeration Tools:
 SMB enumeration provide important information about our target.
