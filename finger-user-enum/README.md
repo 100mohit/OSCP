@@ -9,6 +9,6 @@ Finger is primarily used to enumerate user information on the target system. It 
 
 **Banner Grabbing**
 
-##Telnet
+## Telnet
 
 telnet $ip 79
