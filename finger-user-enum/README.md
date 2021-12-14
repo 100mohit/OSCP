@@ -20,3 +20,5 @@ telnet $ip 79
 nc -nv $ip 79
 
 ````
+
+**Enumeration**
