@@ -7,4 +7,8 @@ Finger is primarily used to enumerate user information on the target system. It 
 **Default port:**
  79
 
-**finger-user-enum**
+**Banner Grabbing**
+
+##Telnet
+
+telnet $ip 79
