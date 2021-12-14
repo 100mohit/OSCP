@@ -2,6 +2,5 @@
 
 **what is finger**
 
-Finger is a program you can use to find information about computer users. It usually lists the login name, the full name, and possibly other details about the user you are fingering. These details may include the office location and phone number (if known), login time, idle time, time mail was last read, and the user's plan and project files.
-
+Finger is primarily used to enumerate user information on the target system. It can also find out detailed information (if exists) such as full name, email address, phone number etc. of all its users.
 
