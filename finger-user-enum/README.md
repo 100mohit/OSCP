@@ -62,6 +62,13 @@ finger-user-enum is a script used to enumerate users
 
 # perl finger-user-enum.pl -d -u root -t 10.10.10.76
 ```
+## Using finger
+````
+ -s          Finger displays the user's login name, real name, terminal name
+
+ -l        Produces a multi-line format displaying all of the information described for the -s option as well as the user's
+           home directory, home phone number, login shell, mail status, and the contents of the files “.plan”, “.project”,
+           “.pgpkey” and “.forward” from the user's home directory.
 
 
 
