@@ -64,12 +64,26 @@ finger-user-enum is a script used to enumerate users
 ```
 ## Using finger
 ````
- -s          Finger displays the user's login name, real name, terminal name
+man finger
+
+ -s        Finger displays the user's login name, real name, terminal name
 
  -l        Produces a multi-line format displaying all of the information described for the -s option as well as the user's
            home directory, home phone number, login shell, mail status, and the contents of the files “.plan”, “.project”,
            “.pgpkey” and “.forward” from the user's home directory.
 
+2. enumerate a known user. In this case root
 
+finger -s root@10.10.10.76
 
+3. Show the home directory of the user
 
+finger -sl root@10.10.10.76
+ 
+````
+#### finger Enum Script
+
+````
+for q in 'root' 'admin' 'user' '0' "'a b c d e f g h'" '|/bin/id';do echo "FINGER: $q"; finger "$q@10.0.0.3"; echo -e "\n";done
+
+````
