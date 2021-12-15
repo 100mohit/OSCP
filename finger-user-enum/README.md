@@ -33,11 +33,11 @@ finger-user-enum is a script used to enumerate users
 ````
 #### Using finger-user-enum
 
-``
+```
 perl finger-user-enum.pl -h
 
 
-``
+```
 
 
 
