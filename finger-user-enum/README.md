@@ -25,7 +25,7 @@ nc -nv $ip 79
 
 **finger-user-enum**
 
-[https://github.com/pentestmonkey/finger-user-enum]
+https://github.com/pentestmonkey/finger-user-enum
 
 ````
 finger-user-enum is a script used to enumerate users
