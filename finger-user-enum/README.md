@@ -34,9 +34,33 @@ finger-user-enum is a script used to enumerate users
 #### Using finger-user-enum
 
 ```
-perl finger-user-enum.pl -h
+1. Displaying help
 
+# perl finger-user-enum.pl -h
 
+2. enumerate a single user
+
+-u = user
+
+-t = host IP
+
+# perl finger-user-enum.pl -u root -t 10.10.10.76
+
+3. Enumerate users using a list
+
+# perl finger-user-enum.pl -U /usr/share/seclists/Usernames/Names/names.txt -t 10.10.10.76
+
+4. Using a list of IPs
+
+# perl finger-user-enum.pl -U /usr/share/seclists/Usernames/Names/names.txt -T IP_list.txt
+
+5. Using another port than default 79
+
+# perl finger-user-enum.pl -p 8000 -U /usr/share/seclists/Usernames/Names/names.txt -t 10.10.10.76
+
+6. Showing detailed output
+
+# perl finger-user-enum.pl -d -u root -t 10.10.10.76
 ```
 
 
