@@ -87,3 +87,11 @@ finger -sl root@10.10.10.76
 for q in 'root' 'admin' 'user' '0' "'a b c d e f g h'" '|/bin/id';do echo "FINGER: $q"; finger "$q@10.0.0.3"; echo -e "\n";done
 
 ````
+## Finger Zero 
+````
+fingerd may respond to finger 0@<host> with information on some user accounts.
+
+finger 0@10.0.0.3
+
+````
+
