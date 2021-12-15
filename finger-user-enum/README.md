@@ -116,3 +116,6 @@ fingerd allows remote command execution through shell metacharacters.
 
 # finger "|/bin/id@10.0.0.3"
 ````
+
+# Links of the sources
+[https://0xffsec.com/handbook/services/finger/#fn:3]
