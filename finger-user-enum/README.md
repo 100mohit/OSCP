@@ -21,7 +21,7 @@ nc -nv $ip 79
 
 ````
 
-**Enumeration**
+## Enumeration
 
 **finger-user-enum**
 
