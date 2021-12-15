@@ -118,4 +118,4 @@ fingerd allows remote command execution through shell metacharacters.
 ````
 
 # Links of the sources
-[https://0xffsec.com/handbook/services/finger/#fn:3]
+https://0xffsec.com/handbook/services/finger/#fn:3
